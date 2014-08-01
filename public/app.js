@@ -4,7 +4,7 @@
    app.controller('AppCtrl', function($scope, $http, $location) {
         
        function init() {
-           var file = 'slides.md';
+           var file = $location.search().file || 'slides.md';
             $http.get(file)
                 .success(function(data) {
                     console.log(data);
